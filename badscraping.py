@@ -6,13 +6,12 @@ from selenium.webdriver.support import expected_conditions as EC
 import requests
 from bs4 import BeautifulSoup
 import lxml 
-import pandas as pd
 import time
 import csv
 
 
 #path to chromedriver // chromedriver is for emulate the browser
-PATH = "/home/altesse/chromedriver"
+PATH = "/chromedriver"
 #put the path in a variable
 driver = webdriver.Chrome(PATH)
 
@@ -40,6 +39,7 @@ def next_page(stop):
 		element.click()
 		#iteration
 		i = i + 1
+		#loop to prepare the data to scrape and send them to a csv file
 		for i in range (1, stop) :
 			result = requests.get('https://old.reddit.com/r/bapcsalescanada/')
 			src = result.content
@@ -57,7 +57,7 @@ def next_page(stop):
 	driver.quit()
 
 #Call the function. 
-next_page(8)
+next_page(3)
 
 
 
