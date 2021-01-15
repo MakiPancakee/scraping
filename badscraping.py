@@ -11,7 +11,7 @@ import csv
 
 
 #path to chromedriver // chromedriver is for emulate the browser
-PATH = "/chromedriver"
+PATH = "chromedriver"
 #put the path in a variable
 driver = webdriver.Chrome(PATH)
 
